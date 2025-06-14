@@ -1,0 +1,189 @@
+:root {
+  --primary-color: #06b3bc;
+  --text-color: #042d2f;
+  --text-color-lighter: #074c50;
+  --secondary-color: #F78828;
+  --warn-color: #FDD219;
+  --danger-color: #FA5456;
+  --white: #FFFFFF;
+  --off-white: #F1F2F4;
+  --gray: #A1A1A1;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23a1a1a1' fill-opacity='0.59' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color-lighter);
+}
+
+header {
+  background-color: var(--primary-color);
+  padding: 48px 0;
+  border-bottom: var(--secondary-color) 6px solid;
+}
+
+header a {
+  font-size: 1.5rem;
+  color: var(--off-white);
+}
+
+main > article, nav{
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+}
+
+nav > a:not(:first-of-type){
+  margin-left: 24px;
+}
+
+nav > a.logo {
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+main > section, main > article {
+  margin-bottom: 96px;
+  box-shadow: 4px 4px 10px var(--gray);
+  background-color: var(--white);
+}
+
+main > section.hero {
+  height: 300px;
+  background-image: url(https://picsum.photos/1920/1000);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  /* make this banner stick to the top! Finished this*/
+}
+
+section.hero > .call-to-action {
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: var(--white) 0px 0px 10px, var(--white) 0px 0px 20px, var(--gray) 2px 2px 2px;
+  padding: 0 48px;
+  margin: 0;
+}
+
+section.hero > button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+main article {
+  padding: 48px 96px;
+}
+
+main p {
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+ /*Make a drop cap for the first letter in the article elements*/
+main article > p:first-of-type::first-letter {
+  font-size: 4em;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  float: left;
+  line-height: 2rem;
+  margin: 1rem 1rem;
+}
+
+main > article img {
+  float: left;
+  width: 300px;
+  height: auto;
+  margin-right: 24px;
+  margin-bottom: 6px;
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--gray);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 24px 0;
+  color: var(--off-white);
+}
+
+/* tooltip code below */
+
+span.tooltip {
+  color: var(--danger-color);
+  position: relative;
+  cursor: pointer;
+}
+
+/* underline span on hover/focus */
+span.tooltip:hover,
+span.tooltip:focus {
+  text-decoration: underline;
+}
+/* show tooltip on hover/focus */
+span.tooltip:hover > span,
+span.tooltip:focus > span {
+display: inline;
+visibility: visible;
+  
+}
+/* styling for tooltip bubble */
+span.tooltip span {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color:white;
+  text-align: left;
+  border-radius: 10px;
+  padding: 10px;
+
+  position:absolute;
+  z-index: 1; /*behind the hero image*/
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px; /*w margin-left = with/2 centers it*/
+
+}
+
+/* styling for tooltip bubble arrow */
+span.tooltip span::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* places it at the bottom of the tooltip */
+  left: 50%; /*centers the arrow*/
+  margin-left: -5px; /*same size as border-witdth - keeps arrow center*/
+  border-width: 5px; /*size of the arrow*/
+  border-style: solid;
+  border-color: black transparent transparent transparent; /*transforms the content into an arrow*/
+}
