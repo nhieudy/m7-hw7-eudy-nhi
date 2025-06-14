@@ -2,16 +2,16 @@
   --primary-color: #06b3bc;
   --text-color: #042d2f;
   --text-color-lighter: #074c50;
-  --secondary-color: #F78828;
-  --warn-color: #FDD219;
-  --danger-color: #FA5456;
-  --white: #FFFFFF;
-  --off-white: #F1F2F4;
-  --gray: #A1A1A1;
+  --secondary-color: #f78828;
+  --warn-color: #fdd219;
+  --danger-color: #fa5456;
+  --white: #ffffff;
+  --off-white: #f1f2f4;
+  --gray: #a1a1a1;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   font-size: 1.3rem;
   color: var(--text-color);
@@ -25,7 +25,8 @@ h1 {
   font-size: 2.5rem;
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -45,7 +46,8 @@ header a {
   color: var(--off-white);
 }
 
-main > article, nav{
+main > article,
+nav {
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -55,7 +57,7 @@ nav {
   display: flex;
 }
 
-nav > a:not(:first-of-type){
+nav > a:not(:first-of-type) {
   margin-left: 24px;
 }
 
@@ -64,7 +66,8 @@ nav > a.logo {
   text-transform: uppercase;
 }
 
-main > section, main > article {
+main > section,
+main > article {
   margin-bottom: 96px;
   box-shadow: 4px 4px 10px var(--gray);
   background-color: var(--white);
@@ -89,7 +92,8 @@ main > section.hero {
 section.hero > .call-to-action {
   font-size: 2rem;
   font-weight: 700;
-  text-shadow: var(--white) 0px 0px 10px, var(--white) 0px 0px 20px, var(--gray) 2px 2px 2px;
+  text-shadow: var(--white) 0px 0px 10px, var(--white) 0px 0px 20px,
+    var(--gray) 2px 2px 2px;
   padding: 0 48px;
   margin: 0;
 }
@@ -111,14 +115,14 @@ main p {
   margin-bottom: 48px;
 }
 
- /*Make a drop cap for the first letter in the article elements*/
+/*Make a drop cap for the first letter in the article elements*/
 main article > p:first-of-type::first-letter {
   font-size: 4em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   float: left;
   line-height: 2rem;
-  margin: 1rem 1rem;
+  margin: 1.5rem;
 }
 
 main > article img {
@@ -154,26 +158,24 @@ span.tooltip:focus {
 /* show tooltip on hover/focus */
 span.tooltip:hover > span,
 span.tooltip:focus > span {
-display: inline;
-visibility: visible;
-  
+  display: inline;
+  visibility: visible;
 }
 /* styling for tooltip bubble */
 span.tooltip span {
   visibility: hidden;
   width: 200px;
-  background-color: black;
-  color:white;
+  background-color: #042d2f;
+  color: white;
   text-align: left;
   border-radius: 10px;
   padding: 10px;
 
-  position:absolute;
+  position: absolute;
   z-index: 1; /*behind the hero image*/
   bottom: 100%;
   left: 50%;
   margin-left: -100px; /*w margin-left = with/2 centers it*/
-
 }
 
 /* styling for tooltip bubble arrow */
@@ -185,5 +187,5 @@ span.tooltip span::after {
   margin-left: -5px; /*same size as border-witdth - keeps arrow center*/
   border-width: 5px; /*size of the arrow*/
   border-style: solid;
-  border-color: black transparent transparent transparent; /*transforms the content into an arrow*/
+  border-color: #042d2f transparent transparent transparent; /*transforms the content into an arrow*/
 }
